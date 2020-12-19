@@ -65,6 +65,16 @@ team_t team = {
 static char *heap_listp = 0;
 static char *free_listp = 0;
 
+/* function prototypes */
+void mm_init(void);
+void *mm_malloc(size_t size);
+void *find_fit(size_t size);
+void place(void *bp, size_t size);
+void mm_free(void *bp);
+void *mm_realloc(void *ptr, size_t size);
+static void *extend_heap(size_t words);
+static void *coalesce(void *bp);
+
 /* 
  * mm_init - initialize the malloc package.
  */
