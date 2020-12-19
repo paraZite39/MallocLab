@@ -66,7 +66,6 @@ static char *heap_listp = 0;
 static char *free_listp = 0;
 
 /* function prototypes */
-void mm_init(void);
 void *mm_malloc(size_t size);
 void *find_fit(size_t size);
 void place(void *bp, size_t size);
@@ -103,7 +102,7 @@ int mm_init(void)
 void *mm_malloc(size_t size)
 {
     size_t asize;
-    size_t extendedsize;
+    size_t extendsize;
     char *bp;
 
     if (size == 0)
